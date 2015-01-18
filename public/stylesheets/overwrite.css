@@ -611,13 +611,8 @@ font-size: 10px;
 }
 
 
-.btn-primary {
-	outline:0;
-  background: #1C0113;
-}
-.btn-primary:hover {
-  background: #170110;
-}
+
+
 
 .btn-info {
   background: #5E9FA3;
@@ -626,33 +621,8 @@ font-size: 10px;
   background: #569498;
 }
 
-.btn-success {
-  background: #11766D;
-}
-.btn-success:hover {
-  background: #0e6a62;
-}
 
-.btn-warning {
-  background: #F0B300;
-}
-.btn-warning:hover {
-  background: #e2a900;
-}
 
-.btn-danger {
-  background: #a40b0b;
-}
-.btn-danger:hover {
-  background: #990909;
-}
-
-.btn-inverse {
-  background: #363636;
-}
-.btn-inverse:hover {
-  background: #505050;
-}
 
 .btn-blue {
   border:1px solid #0a6d9b;

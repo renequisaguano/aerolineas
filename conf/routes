@@ -15,4 +15,8 @@ GET     /public/                                staticDir:public
 *       /{controller}/{action}                  {controller}.{action}
 
 # Import Secure routes
-*      /                module:secure
+*      /             							module:secure
+
+# Aerolineas
+*      /aerolineas             				    Aerolineas.index
+

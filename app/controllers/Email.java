@@ -11,12 +11,11 @@ public class Email {
             d_password = "septimosistemas", //your email password
             d_host = "smtp.gmail.com",
             d_port = "465",
-            m_to = "renequisaguano@gmail.com", // Target email address
-            m_subject = "Testing",
-            m_text = "Probando html. <h1>http://localhost:9000/</h1>";
+            m_subject = "VUELOS - CONFIRMACION DE REGISTRO";
+            
     	
     
-    public Email() {
+    public Email(String m_to, String m_text) {
         Properties props = new Properties();
         props.put("mail.smtp.user", d_email);
         props.put("mail.smtp.host", d_host);
