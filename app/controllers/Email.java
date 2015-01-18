@@ -13,7 +13,7 @@ public class Email {
             d_port = "465",
             m_to = "renequisaguano@gmail.com", // Target email address
             m_subject = "Testing",
-            m_text = "Probando html. <h1><a href='localhost:9000'> ABRA EL SIGUIENTE LINK </a></h1>";
+            m_text = "Probando html. <h1>http://localhost:9000/</h1>";
     	
     
     public Email() {
