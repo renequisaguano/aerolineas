@@ -2,6 +2,7 @@
 
 <html>
     <head>
+    
         <title>#{get 'title' /}</title>
         <meta charset="${_response_encoding}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
@@ -9,8 +10,153 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
+        
+	        
+	     <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <title>Aerolíneas</title>
+	    		
+	    		
+	   <!-- TEMPLATE -->
+		<!-- core CSS -->
+	    <link href="@{'/public/stylesheets/bootstrap.min.css'}" rel="stylesheet" media="screen">
+	    <link href="@{'/public/stylesheets/font-awesome.min.css'}" rel="stylesheet" media="screen">
+	    <link href="@{'/public/stylesheets/animate.min.css'}" rel="stylesheet" media="screen">
+	    <link href="@{'/public/stylesheets/prettyPhoto.css'}" rel="stylesheet" media="screen">
+	    <link href="@{'/public/stylesheets/responsive.css'}" rel="stylesheet" media="screen">
+	    <!--[if lt IE 9]>
+	    <script src="@{'/public/javascripts/html5shiv.js'}"></script>
+	    <script src="@{'/public/javascripts/respond.min.js'}"></script>
+	    <![endif]-->       
+	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="@{'/public/images/ico/apple-touch-icon-144-precomposed.png'}">
+	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="@{'/public/images/ico/apple-touch-icon-114-precomposed.png'}">
+	    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="@{'/public/images/ico/apple-touch-icon-72-precomposed.png'}">
+	    <link rel="apple-touch-icon-precomposed" href="@{'/public/images/ico/apple-touch-icon-57-precomposed.png'}">
+	    
+	    
+	    
+	    <script src="@{'/public/javascripts/jquery.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/jquery.prettyPhoto.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/jquery.isotope.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/main.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    <script src="@{'/public/javascripts/wow.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	    
+	    <!-- FIN TEMPLATE -->
     </head>
+    
+    
+    
     <body>
+    
+      <header id="header">
+        
+		
+		
+		
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+	#{form @Application.enviarMail()}
+		
+		<button type="submit"><h1>ENVIAR MAIL</h1></button>
+		#{/form}
+	
+		<div class="top-bar">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-sm-6 col-xs-4">
+		                <div class="top-number"><p><i class="fa fa-phone-square"></i>  +593 998 882 095</p></div>
+		            </div>
+		            <div class="col-sm-6 col-xs-8">
+		               <div class="social">
+		                    <ul class="social-share">
+		                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+		                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+		                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+		                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+		                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+		                    </ul>
+		                    <div class="search">
+		                        <form role="form">
+		                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+		                            <i class="fa fa-search"></i>
+		                        </form>
+		                   </div>
+		               </div>
+		            </div>
+		        </div>
+		    </div><!--/.container-->
+		</div><!--/.top-bar-->
+
+
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="@{'/public/images/logo.png'}" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Inicio</a></li>
+                        <li><a href="about-us.html">Aerolíneas</a></li>
+                        <li><a href="services.html">Reservas</a></li>
+                        <li><a href="portfolio.html">Vuelos</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Rutas</a></li> 
+                        <li><a href="contact-us.html">Login</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         #{doLayout /}
+        
+         <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 Universidad Técnica de Cotopaxi
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li>Sistemas Distribuidos - Octavo Sistemas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+        
     </body>
 </html>
+
+
+
+
+
+  
