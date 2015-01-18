@@ -26,22 +26,22 @@ public class Security extends Secure.Security {
 	
 		if(email.equals(emailRepetido)){
 			
-			
-			Usuario user = Usuario.find("byEmail",email).first(); //buscando si el usuario ya ha sido registrado
+			//buscando si el usuario ya ha sido registrado
+			Usuario user = Usuario.find("byEmail",emailRepetido).first(); 
 			System.out.println(user);
-			System.out.println(user.equals(null));
-			if (user.equals(null)){
+			if (user == null){
 				String password=generarClave(nombre);
 				Usuario u=new Usuario(email,password,nombre,apellido);
 				u.save();
-				String mensaje="<h1>Bienvenido a la plataforma VUELOS </h1><br> Esta es su contraseña:<b> "+password+" </b><br>"+
-							"Enlace para Iniciar Sesión: <h3>http://localhost:9000/login</h3>";
+				String mensaje="<h1>Bienvenido a la plataforma VUELOS </h1><br> <h4>Esta es su contraseña: </h4> <b> "+password+" </b><br>"+
+							"<h4>Este es el Enlace para Iniciar Sesión:</4> <h3>http://localhost:9000/login</h3>"+
+							"<br><h3>NOTA: Se recomienda no copiar y pegar la contraseña, es mejor verla y escribirla uno mismo.</h3>";
 				Email mail=new Email(email,mensaje);
 				redirect("/security/confirmacion");
-				
+		
 			}else{
 		
-			flash.put("existente", "Esta cuenta ya esta en uso");
+			flash.put("existente", "Error: Esta cuenta ya esta en uso");
 			redirect("/security/registro");
 			}
 	
