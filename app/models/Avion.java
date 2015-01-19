@@ -8,7 +8,7 @@ import play.data.validation.Unique;
 import play.db.jpa.Model;
 
 @Entity
-public class Avione extends Model {
+public class Avion extends Model {
 	@Required
 	@Unique
 	public String serie;

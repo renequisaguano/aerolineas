@@ -4,17 +4,29 @@ package controllers;
 import java.util.Random;
 
 import models.Usuario;
+import play.data.validation.Required;
+import play.mvc.Before;
 import play.mvc.With;
 
 
 
 public class Security extends Secure.Security {
+	@Before
+	public static void mostrarUsuario(){
+		Usuario user = Usuario.find("byEmail", Security.connected()).first();
+		//obteniendo datos del usuario que ha iniciado sesion
+		if(Security.isConnected()) {
+	        renderArgs.put("conectado", user.nombre+" "+user.apellido); 
+	    }
+	}
 	
-	static boolean authenticate(String username, String password){
+	static boolean authenticate(@Required String username, String password){
         Usuario user = Usuario.find("byEmail", username).first();
-
         return user != null && user.password.equals(password);
+        
     }
+	
+
 	
 	
 	public static void guardarUsuario(String email, String emailRepetido, String nombre,String apellido){
@@ -70,6 +82,38 @@ public class Security extends Secure.Security {
 	  public static void registro(){
 		   render();
 	   }
+	  
+	  public static void cuenta(){
+		  Usuario user = Usuario.find("byEmail", Security.connected()).first();
+			flash.put("nombre", user.nombre);
+			flash.put("apellido", user.apellido);
+			flash.put("email", user.email);
+		  
+		  render();
+	  }
+	  
+	  public static void actualizarCuenta(String nombre, String apellido, String password, String passwordNuevo){
+		  Usuario user = Usuario.find("byEmail", Security.connected()).first();
+		  String pass=user.password;
+		  if (password.equals(pass)){
+			  
+			  user.nombre=nombre;
+			  user.apellido=apellido;
+			  flash.put("confirmacion", "Los Datos se han Actualizado");		  
+			  if (!passwordNuevo.equals("")){
+				  user.password=passwordNuevo;
+				  flash.put("confirmacion", "Los Datos / Contraseña se han Actualizado ");
+				  
+			  }
+			  user.save();
+			  redirect("/security/cuenta");
+			  
+			  
+		  }else{
+			  flash.put("error", "Contraseña Incorrecta");
+			  redirect("/security/cuenta");
+		  }
+	  }
 
 
 }

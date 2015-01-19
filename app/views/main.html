@@ -103,7 +103,20 @@
                         </li>
                         <li><a href="portfolio.html" class="opcion">Aviones</a></li>
                         <li><a href="/aerolineas">Aerolíneas</a></li>
+                        #{if conectado}
+	                		 <li class="dropdown">
+	                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown"><i class="fa fa-user"></i> ${conectado} &#9660; </a>
+	                            <ul class="dropdown-menu">
+	                                <li><a href="/security/cuenta">Cuenta</a></li>
+	                                <li><a href="/logout">Cerrar Sesión</a></li>
+	                            </ul>
+	                        </li>
+                        
+                        #{/if}
+                        #{else}
                         <li><a href="/login">Login</a></li>
+                        #{/else}
+                        
                     </ul>
                 </div>
             </div>

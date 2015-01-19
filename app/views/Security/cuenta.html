@@ -15,20 +15,33 @@ function ValidaSoloLetras() {
 
 <div class="container">
     
-		        <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-		                    <div class="panel panel-info" style="background: rgba(255, 255, 255, .9);">
+		        <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+		                    <div class="panel panel-info" >
 		                        <div class="panel-heading">
-		                            <div class="panel-title"><b>Registro de Usuario</b>   <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/login"><h6 style="color:#0088ff;">Iniciar Sesión</h6></a></div>
+		                            <div class="panel-title"><b>Actualización de Datos</b> 
+		                            #{if flash.confirmacion}
+		                            	<br> <h5>&{flash.confirmacion} <a href="/" class="btn btn-primary">Listo</a></h5>
+		                            #{/if}
+		                            </div>
 		                         </div>
 		                        </div>  
-		                        <div class="panel-body" >
+		                        <div class="panel-body" style="background: white;">
 		                        
 		                       
 
-						#{form @Security.guardarUsuario(email,emailRepetido,nombre,apellido)}
+						#{form @Security.actualizarCuenta(nombre,apellido,password,passwordNuevo)}
 		                        			                                  
 		                              
 		                                  <br>
+		                                   <div class="form-group" style="margin-bottom: 25px">
+		                                	 <label for="email" class="col-md-3 control-label">Email:</label>
+		                                    <div class="col-md-9">
+		                                        <label>${flash.email}</label>
+		                                    </div>
+		                                    
+		                                    
+		                                </div>
+		                                <br>
 		                                <div class="form-group" style="margin-bottom: 25px">
 		                                    <label for="firstname" class="col-md-3 control-label">Nombre:</label>
 		                                    <div class="col-md-9">
@@ -43,45 +56,33 @@ function ValidaSoloLetras() {
 		                                    </div>
 		                                </div>
 		                                <br>
-		                                  <div class="form-group" style="margin-bottom: 25px">
-		                                	 <label for="email" class="col-md-3 control-label">Email:</label>
-		                                    <div class="col-md-9">
-		                                        <input type="email" id="email" class="form-control" name="email" placeholder="Ingrese su email" value="${flash.email}" required><br>
-		                                          #{if flash.existente}
-												<p class="error" style="color: red; font-weight: bold;">
-													&{flash.existente}
-												</p>
-												#{/if}
-		                                    </div>
-		                                    
-		                                    
-		                                </div>
-		                                <br>
 		                                <div class="form-group" style="margin-bottom: 25px">
-		                                    <label class="col-md-3 control-label">Repita el Email:</label>
+		                                    <label for="password" class="col-md-3 control-label">Contraseña Actual:</label>
 		                                    <div class="col-md-9">
-		                                        <input type="email" id="emailRepetido" class="form-control" name="emailRepetido" placeholder="Repita su email" value="${flash.emailRepetido}" required>
+		                                        <input type="password" class="form-control" name="password" required><br>
+		                                         #{if flash.error}
+					                            	<H5 style="color:red;">&{flash.error}</H5>
+					                            #{/if}
 		                                    </div>
 		                                </div>
 		                                <br>
-		                       				
-		                       				<div class="form-group" style="margin-bottom: 25px">
-		                                    <label class="col-md-3 control-label"></label>
+		                                <br>
+		                                 <div class="form-group" style="margin-bottom: 25px">
+		                                    <label for="password" class="col-md-3 control-label">Contraseña Nueva:</label>
 		                                    <div class="col-md-9">
-		                                       #{if flash.error}
-												<p class="error" style="color: red; font-weight: bold;">
-													&{flash.error}
-												</p>
-											#{/if}
+		                                        <input type="password" class="form-control" name="passwordNuevo">
+		                                        
 		                                    </div>
 		                                </div>
-		                       
-		                                	
-										<br>
+		                                <br>
+		                                
+		                                
+		                    
 		                                <div class="form-group" style="margin-bottom: 25px">
 		                                    <!-- Button -->                                        
-		                                    <div class="col-md-offset-3 col-md-9">
-		                                        <button id="btn-signup" type="submit" class="btn btn-primary" ><b>Registrar Cuenta</b></button>
+		                                    <div class="col-md-offset-3 col-md-9" >
+		                                        <button id="btn-signup" type="submit" class="btn btn-success" style="color:black;"><b>Actualizar Datos</b></button>
+		                                        <a class="btn btn-warning" style="color:black;" href="/"><b>Cancelar</b></a>
 		                                    </div>
 		                                    
 		                                </div>
@@ -94,6 +95,7 @@ function ValidaSoloLetras() {
 		               
 		                
 		         </div> 
+		         <br>
 </div>	         
 		         
 		         
