@@ -2,7 +2,7 @@
 #Archivos omitidos
 
 /tmp
-/modules
+#/modules
 /lib
 /test-result
 /logs
