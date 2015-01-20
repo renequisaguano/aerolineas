@@ -1,11 +1,16 @@
 package models;
 
+
+
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import play.data.validation.Required;
 import play.data.validation.Unique;
 import play.db.jpa.Model;
+import controllers.Escalas;
 
 @Entity
 public class Vuelo extends Model{
@@ -24,6 +29,8 @@ public class Vuelo extends Model{
 	public Avion avion;
 	
 	
+	
+	
 	public String toString(){
 		
 		return "# "+numero+" Desde "+this.origen+" -> Hacia "+this.destino;
@@ -31,11 +38,19 @@ public class Vuelo extends Model{
 	}
 	
 	public String toAdicional1(){
-		return  "Salida: "+this.fechaSalida ;
+		return  "Salida: "+this.fechaSalida+" LLegada: "+this.fechaLlegada;
 	}
 	
 	public String toAdicional2(){
-		return "LLegada: "+this.fechaLlegada;
+		List<Escala> escalas=Escala.find("vuelo.numero = ?", this.numero).fetch();
+
+		String retorno="";
+		
+		for(Escala escala: escalas){
+			retorno+=escala+". ";
+		}
+		
+		return "Escala: "+retorno;
 	}
 }
 

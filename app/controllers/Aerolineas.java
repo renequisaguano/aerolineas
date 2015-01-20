@@ -4,6 +4,7 @@ import models.Usuario;
 import play.mvc.*;
 
 @With(Secure.class)
+@Check("isAdmin")
 public class Aerolineas extends CRUD {
 	@Before
 	public static void mostrarUsuario(){

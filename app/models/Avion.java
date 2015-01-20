@@ -18,20 +18,22 @@ public class Avion extends Model {
 	@Required
 	public String marca;
 	@Required
+	public int capacidad;
+	@Required
 	@ManyToOne
 	public Aerolinea aerolinea;
 	public String toString(){
 		
-		return this.serie;
+		return "Serie: "+this.serie;
 	}
 	public String toAdicional1(){
 		
-		return this.marca;
+		return "Marca: "+this.marca;
 	}
 	
 	public String toAdicional2(){
 		
-		return null;
+		return "Capacidad: "+this.capacidad+" personas";
 	}
 	
 	
