@@ -3,6 +3,8 @@ package controllers;
 
 import java.util.Random;
 
+import org.h2.engine.User;
+
 import models.Usuario;
 import play.data.validation.Required;
 import play.mvc.Before;
@@ -118,6 +120,13 @@ public class Security extends Secure.Security {
 			  redirect("/security/cuenta");
 		  }
 	  }
+	  public static boolean check(String email) {
+		  Usuario user = Usuario.find("byEmail",Security.connected()).first();
+		  
+		return user.isAdmin ;
+		
+	}
+	  
 
 
 }
