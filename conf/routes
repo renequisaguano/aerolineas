@@ -23,5 +23,8 @@ GET     /public/                                staticDir:public
 # Aerolineas
 *      /aviones             				    Aviones.index
 
+# Usuarios
+*      /usuarios             				    Usuarios.index
+
 # Import CRUD routes
 *     /admin        						   module:crud

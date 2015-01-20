@@ -122,6 +122,7 @@ public class Security extends Secure.Security {
 	  }
 	  public static boolean check(String email) {
 		  Usuario user = Usuario.find("byEmail",Security.connected()).first();
+		  System.out.println(user.isAdmin+user.nombre);
 		  
 		return user.isAdmin ;
 		
