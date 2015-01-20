@@ -13,11 +13,15 @@ import play.mvc.With;
 public class Security extends Secure.Security {
 	@Before
 	public static void mostrarUsuario(){
-		Usuario user = Usuario.find("byEmail", Security.connected()).first();
-		//obteniendo datos del usuario que ha iniciado sesion
-		if(Security.isConnected()) {
-	        renderArgs.put("conectado", user.nombre+" "+user.apellido); 
-	    }
+		try{
+			Usuario user = Usuario.find("byEmail", Security.connected()).first();
+			//obteniendo datos del usuario que ha iniciado sesion
+			if(Security.isConnected()) {
+		        renderArgs.put("conectado", user.nombre+" "+user.apellido); 
+		    }
+			}catch(Exception ex){
+				
+			}
 	}
 	
 	static boolean authenticate(@Required String username, String password){

@@ -22,7 +22,16 @@ public class Avion extends Model {
 	public Aerolinea aerolinea;
 	public String toString(){
 		
-		return this.serie+" "+this.marca;
+		return this.serie;
+	}
+	public String toAdicional1(){
+		
+		return this.marca;
+	}
+	
+	public String toAdicional2(){
+		
+		return null;
 	}
 	
 	

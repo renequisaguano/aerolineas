@@ -1,10 +1,13 @@
 package controllers;
 
+import models.Categoria;
 import models.Usuario;
-import play.mvc.*;
+import play.mvc.Before;
+import play.mvc.With;
 
-@With(Secure.class)
-public class Aerolineas extends CRUD {
+
+@With(Categoria.class)
+public class Categorias extends CRUD {
 	@Before
 	public static void mostrarUsuario(){
 		try{
@@ -17,6 +20,5 @@ public class Aerolineas extends CRUD {
 				
 			}
 	}
-  
-
 }
+  

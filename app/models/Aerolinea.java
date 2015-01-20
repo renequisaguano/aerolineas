@@ -19,4 +19,11 @@ public class Aerolinea extends Model {
 			
 			return this.nombre;
 		}
+	public String toAdicional1(){
+		return this.descripcion;
+	}
+	
+	public String toAdicional2(){
+		return null;
+	}
 }
