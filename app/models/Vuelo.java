@@ -20,24 +20,22 @@ public class Vuelo extends Model{
 	public String origen;
 	@Required
 	public String destino;
-	@Required
-	public String puertaEmbarque;
 	@ManyToOne
 	public Avion avion;
 	
 	
 	public String toString(){
 		
-		return "# "+numero;
+		return "# "+numero+" Desde "+this.origen+" -> Hacia "+this.destino;
 				
 	}
 	
 	public String toAdicional1(){
-		return "Desde "+origen+" -> Hacia "+destino;
+		return  "Salida: "+this.fechaSalida ;
 	}
 	
 	public String toAdicional2(){
-		return "Salida: "+this.fechaSalida+" - LLegada: "+fechaLlegada;
+		return "LLegada: "+this.fechaLlegada;
 	}
 }
 

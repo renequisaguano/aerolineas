@@ -8,10 +8,7 @@ import play.db.jpa.Model;
 @Entity
 public class Categoria extends Model{
 	public String descripcion;
-	public Double valor;
-	@ManyToOne
-	public Avion avion;
-	
+
 	
 	public String toString(){
 		
@@ -20,10 +17,10 @@ public class Categoria extends Model{
 	}
 	
 	public String toAdicional1(){
-		return String.valueOf(this.valor);
+		return null;
 	}
 	
 	public String toAdicional2(){
-		return this.avion.serie+" "+this.avion.marca;
+		return null;
 	}
 }
