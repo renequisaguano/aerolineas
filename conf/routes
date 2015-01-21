@@ -26,5 +26,8 @@ GET     /public/                                staticDir:public
 # Usuarios
 *      /usuarios             				    Usuarios.index
 
+# Usuarios
+*      /compras             				    Compras.index
+
 # Import CRUD routes
 *     /admin        						   module:crud

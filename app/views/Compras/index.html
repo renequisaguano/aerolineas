@@ -1,0 +1,76 @@
+#{extends 'main.html' /}
+<head>
+<!-- Create sliders. -->
+<script type="text/javascript">
+	$(function() {
+
+		$('#slider1').Thumbelina({
+			$bwdBut : $('#slider1 .left'), // Selector to left button.
+			$fwdBut : $('#slider1 .right')
+		// Selector to right button.
+		});
+
+		$('#slider2').Thumbelina({
+			$bwdBut : $('#slider2 .left'), // Selector to left button.
+			$fwdBut : $('#slider2 .right')
+		// Selector to right button.
+		});
+
+		$('#slider3').Thumbelina({
+			orientation : 'vertical', // Use vertical mode (default horizontal).
+			$bwdBut : $('#slider3 .top'), // Selector to top button.
+			$fwdBut : $('#slider3 .bottom')
+		// Selector to bottom button.
+		});
+
+	})
+</script>
+
+<style type="text/css">
+/* Some styles for the containers */
+#slider1 {
+	position: relative; /* Containers need relative or absolute position. */
+	margin-left: 20px;
+	width: 256px;
+	height: 120px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+#slider2 {
+	position: relative;
+	margin-left: 20px;
+	width: 75%;
+	height: 120px;
+	border-top: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+}
+
+#slider3 {
+	position: relative;
+	margin-top: 40px;
+	width: 93px;
+	height: 256px;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	margin-bottom: 40px;
+}
+</style>
+
+</head>
+<body>
+	<div id="slider1">
+		<div class="thumbelina-but horiz left">&#706;</div>
+		<ul>
+			<li><div>
+					<h1>hola</h1>
+				</div></li>
+			<li><h1>hola</h1></li>
+			<li><h1>hola</h1></li>
+			<li><h1>hola</h1></li>
+			<li><h1>hola</h1></li>
+			<li><h1>hola</h1></li>
+		</ul>
+		<div class="thumbelina-but horiz right">&#707;</div>
+	</div>
+</body>
