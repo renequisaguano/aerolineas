@@ -99,15 +99,22 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown">Vuelos &#9660; </a>
                             <ul class="dropdown-menu">
+                            <!-- 
                                 <li><a href="#">Ver Vuelos</a></li>
+                                 -->
                                 <li><a href="/compras">Compras</a></li>
+                                <!-- 
 								<li><a href="#">Promociones</a></li>
+								 -->
                             </ul>
                         </li>         
-                        <li><a href="/aviones" class="opcion">Aviones</a></li>               
+                        <!-- 
+                        <li><a href="/aviones" class="opcion">Aviones</a></li>  
+                         -->             
                         #{secure.check "administrator"}
         					<li><a href="/aerolineas">Administración</a></li>
-						#{/secure.check}             
+						#{/secure.check}     
+						        
                    
                        
                         #{if conectado}
