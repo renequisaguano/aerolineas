@@ -36,6 +36,7 @@
 						<ul>
 							#{if boletos}
 							#{list items:boletos , as:'bolet'}
+							#{if bolet.getDisponibles()>=1}
 							<li>
 								<div class="panel panel-primary">
 									<div class="panel-heading">
@@ -52,6 +53,7 @@
 									</div>
 								</div>
 							</li>
+							#{/if}
 							#{/list}
 							#{/if}
 							#{else}
