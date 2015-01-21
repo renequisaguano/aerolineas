@@ -52,8 +52,9 @@ public class Security extends Secure.Security {
 				Usuario u=new Usuario(email,password,nombre,apellido);
 				u.save();
 				String mensaje="<h1>Bienvenido a la plataforma VUELOS </h1><br> <h4>Esta es su contraseña: </h4> <b> "+password+" </b><br>"+
-							"<h4>Este es el Enlace para Iniciar Sesión:</4> <h3>http://localhost:9000/login</h3>"+
-							"<br><h3>NOTA: Se recomienda no copiar y pegar la contraseña, es mejor verla y escribirla uno mismo.</h3>";
+							"<h4>Este es el Enlace para Iniciar Sesión:</4> <h3>http://192.168.1.2:9000/login</h3>"+
+							"<br><h3>NOTA: Se recomienda no copiar y pegar la contraseña, es mejor verla y escribirla uno mismo.</h3>"+
+							"Luego de Iniciar Sesion puede cambiar la contraseña";
 				Email mail=new Email(email,mensaje);
 				redirect("/security/confirmacion");
 		
