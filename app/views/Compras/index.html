@@ -10,19 +10,6 @@
 		// Selector to right button.
 		});
 
-		$('#slider2').Thumbelina({
-			$bwdBut : $('#slider2 .left'), // Selector to left button.
-			$fwdBut : $('#slider2 .right')
-		// Selector to right button.
-		});
-
-		$('#slider3').Thumbelina({
-			orientation : 'vertical', // Use vertical mode (default horizontal).
-			$bwdBut : $('#slider3 .top'), // Selector to top button.
-			$fwdBut : $('#slider3 .bottom')
-		// Selector to bottom button.
-		});
-
 	})
 </script>
 
@@ -31,46 +18,57 @@
 #slider1 {
 	position: relative; /* Containers need relative or absolute position. */
 	margin-left: 20px;
-	width: 256px;
-	height: 120px;
+	width: 270px;
+	height: 350px;
 	border-top: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
-}
-
-#slider2 {
-	position: relative;
-	margin-left: 20px;
-	width: 75%;
-	height: 120px;
-	border-top: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
-}
-
-#slider3 {
-	position: relative;
-	margin-top: 40px;
-	width: 93px;
-	height: 256px;
-	border-left: 1px solid #aaa;
-	border-right: 1px solid #aaa;
-	margin-bottom: 40px;
 }
 </style>
 
 </head>
 <body>
-	<div id="slider1">
-		<div class="thumbelina-but horiz left">&#706;</div>
-		<ul>
-			<li><div>
-					<h1>hola</h1>
-				</div></li>
-			<li><h1>hola</h1></li>
-			<li><h1>hola</h1></li>
-			<li><h1>hola</h1></li>
-			<li><h1>hola</h1></li>
-			<li><h1>hola</h1></li>
-		</ul>
-		<div class="thumbelina-but horiz right">&#707;</div>
+	<div class="container">
+		<div class="row">
+			<div class="box">
+				<div class="col-lg-6">
+					<div id="slider1">
+						<div class="thumbelina-but horiz left">&#706;</div>
+						<ul>
+							#{if boletos}
+							#{list items:boletos , as:'bolet'}
+							<li>
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<h3 class="panel-title">Vuelo: ${bolet.vuelo.origen} a ${bolet.vuelo.destino}</h3>
+									</div>
+									<div class="panel-body">
+									<h6>N°Vuelo:${bolet.vuelo.numero}</h6>
+									<h6>Salida:${bolet.vuelo.fechaSalida}</h6>
+									<h6>Llegada:${bolet.vuelo.fechaLlegada}</h6>
+									<h6>Avion :${bolet.vuelo.avion.marca}</h6>
+									<h6>Costo :${bolet.valor}</h6>
+									<h6>Asientos :${bolet.getDisponibles()}</h6>
+									<a class="btn btn-warning" href="@{Compras.comprar(bolet.id)}">comprar</a>
+									</div>
+								</div>
+							</li>
+							#{/list}
+							#{/if}
+							#{else}
+								<li>
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										<h3 class="panel-title">NO HAY VUELOS</h3>
+									</div>
+									<div class="panel-body">INTENTELO MAS TARDE</div>
+								</div>
+							</li>
+							#{/else}
+						</ul>
+						<div class="thumbelina-but horiz right">&#707;</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
