@@ -19,6 +19,11 @@ GET     /public/                                staticDir:public
 
 # Aerolineas
 *      /aerolineas             				    Aerolineas.index
+# Reporte
+*      /repo	             				    Compras.repo
+
+#Ajax uno
+GET     /uno             				        Compras.uno
 
 # Aerolineas
 *      /aviones             				    Aviones.index
@@ -28,6 +33,9 @@ GET     /public/                                staticDir:public
 
 # Usuarios
 *      /compras             				    Compras.index
+
+# Usuarios
+*      /comprar             				    Compras.comprar
 
 # Import CRUD routes
 *     /admin        						   module:crud

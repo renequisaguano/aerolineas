@@ -20,9 +20,7 @@ public class Boleto extends CRUD {
 				
 			}
 	}
-
-
-
+	
 }
 
 

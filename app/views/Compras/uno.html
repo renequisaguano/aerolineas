@@ -1,0 +1,86 @@
+<script>
+	$(document).ready(function() {
+		// Handler for .ready() called.
+
+		$("#canti").blur(function() {
+			var can = $('#canti').val();
+			var pre=${lista.valor}*can			
+			$('#total').val(pre);
+
+		});
+
+	});
+</script>
+
+<h3 class="panel-title">Vuelo: ${lista.vuelo.origen} a
+	${lista.vuelo.destino}</h3>
+<div class="row">
+	<form action="@{Compras.comprar(id,cantida,tipo)}">
+		<table class="table">
+			<tr>
+				<td><strong>N°Vuelo:</strong></td>
+				<td>${lista.vuelo.numero}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Salida:</strong></td>
+				<td>${lista.vuelo.fechaSalida}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Llegada:</strong></td>
+				<td>${lista.vuelo.fechaLlegada}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Avion :</strong></td>
+				<td>${lista.vuelo.avion.marca}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Costo :</strong></td>
+				<td>${lista.valor}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Asientos :</strong></td>
+				<td>${lista.getDisponibles()}</td>
+			</tr>
+
+			<tr>
+				<td><strong>Clase :</strong></td>
+				<td>${lista.categoria.descripcion}</td>
+			</tr>
+
+			<tr>
+
+				<td><strong>Cantidad:</strong></td>
+				<td><input name="cantidad" type="number" required="required"
+					id="canti"> <input type="hidden" name="id"
+					value="${lista.id}"></td>
+			</tr>
+			<tr>
+				<td><strong>TipoAsiento:</strong></td>
+				<td><select name="tipo" id="tipo">
+						<option>Passillo</option>
+						<option>Ventana</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><strong>Costo Total:</strong></td>
+				<td>
+					<input type="text" id="total" readonly="readonly">
+					<span>$</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type="submit" id="comp"
+						class="btn btn-success btn-block" role="button">
+						<span class="glyphicon glyphicon-shopping-cart"></span>Comprar
+					</button></td>
+			</tr>
+
+		</table>
+	</form>
+
+</div>

@@ -35,8 +35,5 @@ public class Avion extends Model {
 		
 		return "Capacidad: "+this.capacidad+" personas";
 	}
-	
-	
-	
     
 }
