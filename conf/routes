@@ -30,4 +30,4 @@ GET     /public/                                staticDir:public
 *      /compras             				    Compras.index
 
 # Import CRUD routes
-*     /admin        						   module:crud
+*     /admin        						     module:crud
