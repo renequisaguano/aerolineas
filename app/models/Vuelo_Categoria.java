@@ -17,7 +17,12 @@ public class Vuelo_Categoria extends Model {
 	@Required
 	public double valor;
 	@Required
-	public String puertaEmbarque;	
+	public String puertaEmbarque;
+	@Required
+	public int puestosVentana;
+	@Required
+	public int puestosPasillo;
+	
 	public String toString(){
 		
 			return this.categoria.descripcion;
@@ -30,7 +35,8 @@ public class Vuelo_Categoria extends Model {
 		return " FECHA DE SALIDA: "+this.vuelo.fechaSalida+" -> FECHA DE LLEGADA: "+this.vuelo.fechaSalida+" -> PUERTA DE EMARQUE: "+puertaEmbarque+ " >VALOR: $"+this.valor;
 	}
 	public int getDisponibles(){
-		long comprados = Reserva.count("lista_id = ?",this.id);
-		return (int) (this.vuelo.avion.capacidad-comprados);		
+		int res= this.puestosPasillo+this.puestosVentana;
+		//long comprados = Reserva.count("lista_id = ?",this.id);
+		return (res);		
 	}
 }

@@ -16,9 +16,7 @@ public class Avion extends Model {
 	@Unique
 	public String placa;
 	@Required
-	public String marca;
-	@Required
-	public int capacidad;
+	public String marca;	
 	@Required
 	@ManyToOne
 	public Aerolinea aerolinea;
@@ -33,10 +31,7 @@ public class Avion extends Model {
 	
 	public String toAdicional2(){
 		
-		return "Capacidad: "+this.capacidad+" personas";
+		return "Placa: "+this.placa;
 	}
-	
-	
-	
     
 }

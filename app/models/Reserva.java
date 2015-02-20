@@ -15,11 +15,15 @@ public class Reserva extends Model {
 	public Vuelo_Categoria lista;
 	@ManyToOne
 	public Usuario cliente;
-	public Reserva(Vuelo_Categoria lista, Usuario cliente) {
+	public int cantidad;
+	
+	public Reserva(Vuelo_Categoria lista, Usuario cliente,int cantidad) {
 		super();
 		this.fechaReserva = new Date();
 		this.lista = lista;
 		this.cliente = cliente;
+		this.cantidad=cantidad;
+		
 	}
 	
 }
